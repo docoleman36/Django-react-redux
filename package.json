@@ -4,13 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development ./leadmanager/frontend/src/index.js --output ./leadmanager/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./leadmanager/frontend/src/index.js --output ./leadmanager/frontend/static/frontend/main.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "webpack": "^4.41.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.6.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
     "webpack-cli": "^3.3.9"
+  },
+  "nohoist": [
+    "**/babel-preset-react-app/@babel/runtime"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.0"
   }
 }
